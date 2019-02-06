@@ -1,0 +1,8 @@
+language: java
+
+before_script: 
+- cd weka
+
+script: 
+- mvn compile
+- mvn test
