@@ -1064,6 +1064,8 @@ public class LinearRegression extends AbstractClassifier implements
   protected double regressionPrediction(Instance transformedInstance,
     boolean[] selectedAttributes, double[] coefficients) throws Exception {
 
+    String text = helloWorld();
+
     double result = 0;
     int column = 0;
     for (int j = 0; j < transformedInstance.numAttributes(); j++) {
@@ -1075,6 +1077,10 @@ public class LinearRegression extends AbstractClassifier implements
     result += coefficients[column];
 
     return result;
+  }
+
+  public String helloWorld(){
+    return "Hello World";
   }
 
   /**
