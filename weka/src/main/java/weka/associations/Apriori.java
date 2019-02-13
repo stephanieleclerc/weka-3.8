@@ -1840,6 +1840,10 @@ public class Apriori extends AbstractAssociator implements OptionHandler,
     }
   }
 
+  public String returnString() {
+    return "String returned";
+  }
+
   /**
    * returns all the rules
    * 

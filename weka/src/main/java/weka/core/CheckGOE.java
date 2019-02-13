@@ -386,6 +386,29 @@ public class CheckGOE extends Check {
     return result;
   }
 
+  public boolean checkStringReturner() {
+    boolean result;
+    Class<?> cls;
+
+    print("Global info...Hello World...");
+
+    result = true;
+    cls = getObject().getClass();
+
+    // test for globalInfoHelloWorld method
+    try {
+      cls.getMethod("returnString", (Class[]) null);
+    } catch (Exception e) {
+      result = false;
+    }
+
+    if (result) {
+      println("yes");
+    } else {
+      println("no");
+    }
+    return result;
+  }
   /**
    * Runs some diagnostic tests on the object. Output is printed to System.out
    * (if not silent).

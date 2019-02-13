@@ -902,7 +902,11 @@ public abstract class AbstractAssociatorTest
     if (!m_GOETester.checkGlobalInfo())
       fail("No globalInfo method");
   }
-  
+
+  public void teststringReturner() {
+    if (!m_GOETester.checkGlobalInfo())
+      fail("String returner failed");
+  }
   /**
    * tests the tool tips
    */
