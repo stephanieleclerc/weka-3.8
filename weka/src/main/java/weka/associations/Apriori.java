@@ -1841,7 +1841,7 @@ public class Apriori extends AbstractAssociator implements OptionHandler,
   }
 
   public String returnString() {
-    return "String Returned";
+    return "String returned";
   }
 
   /**
