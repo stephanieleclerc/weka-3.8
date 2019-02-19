@@ -6,3 +6,6 @@ before_script:
 script: 
 - mvn compile
 - mvn test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
