@@ -19,11 +19,7 @@
 
 package weka.associations;
 
-import weka.core.Attribute;
-import weka.core.CheckGOE;
-import weka.core.CheckOptionHandler;
-import weka.core.Instances;
-import weka.core.OptionHandler;
+import weka.core.*;
 import weka.core.CheckScheme.PostProcessor;
 import weka.test.Regression;
 
@@ -852,7 +848,7 @@ public abstract class AbstractAssociatorTest
     }
   }
 
-  // TODO : FIND ME AT THE END
+  // TODO : FIND ME AT THE BEGINNING
   /**
    * tests the setting of the options
    */
@@ -864,7 +860,7 @@ public abstract class AbstractAssociatorTest
   //}
 
     /**
-     * tests the setting of the options
+     * tests the technical info
      */
     public void testAprioriTechnicalInformation() {
           Apriori ap = new Apriori();
@@ -872,8 +868,136 @@ public abstract class AbstractAssociatorTest
                 fail("getOptions method failed.");
     }
 
+    /**
+     * tests metric Type Text
+     */
+    public void testAprioriMetricTypeTipText() {
+        Apriori ap = new Apriori();
+        if(ap.metricTypeTipText().length() <= 0)
+            fail("getOptions method failed.");
+    }
 
+    /**
+     * tests metric Type Text
+     */
+    public void testAprioriMetricType() {
+        Apriori ap = new Apriori();
+        if(!ap.getMetricType().getClass().equals(SelectedTag.class))
+            fail("getOptions method failed.");
+    }
 
+    /**
+     * tests metric setLowerBound
+     */
+    public void testAprioriSetLowerBound() {
+        Apriori ap = new Apriori();
+        double min = 0.2;
+        ap.setLowerBoundMinSupport(min);
+        if(ap.getLowerBoundMinSupport() != min)
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests car setting
+     */
+    public void testAprioriSetCar() {
+        Apriori ap = new Apriori();
+        boolean flag = true;
+        ap.setCar(flag);
+        if(!ap.getCar())
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests car tip text
+     */
+    public void testAprioriCarTipText() {
+        Apriori ap = new Apriori();
+        if(!ap.carTipText().getClass().equals(String.class))
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests index setting
+     */
+    public void testAprioriSetClassIndex() {
+        Apriori ap = new Apriori();
+        int index = 100;
+        ap.setClassIndex(index);
+        if(ap.getClassIndex() != index)
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests index Tip Text
+     */
+    public void testAprioriClassIndexTipText() {
+        Apriori ap = new Apriori();
+        if(!ap.classIndexTipText().getClass().equals(String.class))
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests set minMetric
+     */
+    public void testAprioriSetMinMetric() {
+        Apriori ap = new Apriori();
+        double min = 0.01;
+        ap.setMinMetric(min);
+        if(ap.getMinMetric() != min)
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests minMetric Tip Text
+     */
+    public void testAprioriMinMetricTipText() {
+        Apriori ap = new Apriori();
+        if(!ap.minMetricTipText().getClass().equals(String.class))
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests set verbose
+     */
+    public void testAprioriSetVerbose() {
+        Apriori ap = new Apriori();
+        boolean flag = true;
+        ap.setVerbose(flag);
+        if(!ap.getVerbose())
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests verbose Tip Text
+     */
+    public void testAprioriVerboseTipText() {
+        Apriori ap = new Apriori();
+        if(!ap.verboseTipText().getClass().equals(String.class))
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests set treatZeroAsMissing
+     */
+    public void testAprioriSetTreatZeroAsMissing() {
+        Apriori ap = new Apriori();
+        boolean flag = true;
+        ap.setTreatZeroAsMissing(flag);
+        if(!ap.getTreatZeroAsMissing())
+            fail("getOptions method failed.");
+    }
+
+    /**
+     * tests treatZeroAsMissing Tip Text
+     */
+    public void testAprioriTreatZeroAsMissingTipText() {
+        Apriori ap = new Apriori();
+        if(!ap.treatZeroAsMissingTipText().getClass().equals(String.class))
+            fail("getOptions method failed.");
+    }
+
+    // TODO : FIND ME AT THE END
 
 
   /**
