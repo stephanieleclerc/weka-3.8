@@ -22,6 +22,7 @@ package weka.classifiers;
 import java.util.ArrayList;
 
 import junit.framework.TestCase;
+import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.EvaluationUtils;
 import weka.classifiers.evaluation.Prediction;
 import weka.core.Attribute;
@@ -1008,6 +1009,63 @@ public abstract class AbstractClassifierTest extends TestCase {
       fail("setOptions method failed.");
     }
   }
+
+  // TODO: New tests start here
+  /**
+   * tests the setting of the options
+   */
+  public void testGetOptions() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    if (naiveBayes.getOptions() == null) {
+      fail("getOptions method failed.");
+    }
+  }
+  /**
+   * tests the capabilities of the classifier
+   */
+  public void testGetCapabilities() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    if (naiveBayes.getCapabilities() == null) {
+      fail("getCapabilities method failed.");
+    }
+  }
+  /**
+   * tests the technical information
+   */
+  public void testGetTechnicalInformation() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    if (naiveBayes.getTechnicalInformation() == null) {
+      fail("getTechnicalInformation method failed.");
+    }
+  }
+  /**
+   * tests the use kernel estimator Tip Text
+   */
+  public void testUseKernelEstimatorTipText() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    if(!naiveBayes.useKernelEstimatorTipText().getClass().equals(String.class))
+      fail("getOptions method failed.");
+  }
+  /**
+   * tests the use kernel estimator
+   */
+  public void testGetUseKernelEstimator() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    boolean value = true;
+    naiveBayes.setUseKernelEstimator(value);
+    if (!naiveBayes.getUseKernelEstimator())
+      fail("getUseKernelEstimator method failed.");
+  }
+  /**
+   * tests the use supervised discretization Tip Text
+   */
+  public void testUseSupervisedDiscretizationTipText() {
+    NaiveBayes naiveBayes = new NaiveBayes();
+    if(!naiveBayes.useSupervisedDiscretizationTipText().getClass().equals(String.class)) {
+      fail("UseSupervisedDiscretizationTipText method failed.");
+    }
+  }
+
 
   /**
    * tests whether the default settings are processed correctly
