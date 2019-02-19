@@ -851,7 +851,31 @@ public abstract class AbstractAssociatorTest
 	fail("setOptions method failed.");
     }
   }
-  
+
+  // TODO : FIND ME AT THE END
+  /**
+   * tests the setting of the options
+   */
+  public void testGetOptions() {
+      if (m_OptionTester.getOptionHandler() != null) {
+          if (!m_OptionTester.checkGetOptions())
+              fail("getOptions method failed.");
+      }
+  }
+
+    /**
+     * tests the setting of the options
+     */
+    public void testAprioriTechnicalInformation() {
+          Apriori ap = new Apriori();
+          if(ap.getTechnicalInformation() == null)
+                fail("getOptions method failed.");
+    }
+
+
+
+
+
   /**
    * tests whether the default settings are processed correctly
    */
